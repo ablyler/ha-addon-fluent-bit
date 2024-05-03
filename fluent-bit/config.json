@@ -6,7 +6,6 @@
   "arch": ["armhf", "armv7", "aarch64", "amd64", "i386"],
   "init": false,
   "startup": "services",
-  "boot": "auto",
   "map": ["addon_config"],
   "journald": true,
   "options": {
