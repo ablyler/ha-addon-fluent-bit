@@ -1,10 +1,25 @@
 ARG BUILD_FROM
 FROM ${BUILD_FROM}
 
-RUN apt-get update -y && \
-    apt-get install gpg python3 python3-pip --no-install-recommends -y
+ARG FLUENTBIT_VERSION=3.0.7
 
-RUN curl https://raw.githubusercontent.com/fluent/fluent-bit/master/install.sh | sh
+RUN apt-get update -y && \
+    apt-get install curl gpg --no-install-recommends -y && \
+    apt-get install curl --no-install-recommends -y
+
+COPY fluentbit.key /fluentbit.key
+RUN cat /fluentbit.key | gpg --dearmor > /usr/share/keyrings/fluentbit-keyring.gpg && \
+    rm /fluentbit.key
+
+RUN . /etc/os-release && \
+    export OS=$( echo "${ID}" | tr '[:upper:]' '[:lower:]') && \
+    export CODENAME=$( echo "${VERSION_CODENAME}" | tr '[:upper:]' '[:lower:]') && \
+    echo "deb [signed-by=/usr/share/keyrings/fluentbit-keyring.gpg] https://packages.fluentbit.io/debian/${CODENAME} ${CODENAME} main" > /etc/apt/sources.list.d/fluentbit.list
+
+ENV FLUENTBIT_VERSION=$FLUENTBIT_VERSION
+RUN apt-get update -y && \
+    apt-get install python3 python3-pip --no-install-recommends -y && \
+    apt-get install fluent-bit=${FLUENTBIT_VERSION} --no-install-recommends -y
 
 COPY run.py /run.py
 CMD ["python3", "-u", "/run.py"]
