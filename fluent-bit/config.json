@@ -1,6 +1,6 @@
 {
   "name": "fluent-bit",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "slug": "fluent_bit",
   "description": "Fluent-Bit log shipping",
   "arch": ["armhf", "armv7", "aarch64", "amd64", "i386"],
