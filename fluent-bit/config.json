@@ -4,7 +4,7 @@
   "slug": "fluent_bit",
   "description": "Fluent-Bit log shipping",
   "arch": ["aarch64", "amd64"],
-  "image": "ghcr.io/ablyler/ha-addon-fluent-bit/{arch}",
+  "image": "ghcr.io/ablyler/{arch}-addon-fluent-bit",
   "init": false,
   "startup": "services",
   "map": ["addon_config"],
