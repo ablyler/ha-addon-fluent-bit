@@ -11,8 +11,11 @@ on:
   pull_request:
     branches:
       - main
-  release:
-    types: [published]
+  workflow_run:
+    workflows:
+      - Release
+    types:
+      - completed
 
 jobs:
   init:
