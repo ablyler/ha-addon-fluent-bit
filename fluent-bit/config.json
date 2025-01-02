@@ -1,17 +1,22 @@
 {
   "name": "fluent-bit",
-  "version": "1.0.1",
+  "version": "1.0.0",
   "slug": "fluent_bit",
   "description": "Fluent-Bit log shipping",
-  "arch": ["aarch64", "amd64"],
+  "arch": [
+    "aarch64",
+    "amd64"
+  ],
   "image": "ghcr.io/ablyler/{arch}-addon-fluent-bit",
   "init": false,
   "startup": "services",
-  "map": ["addon_config"],
+  "map": [
+    "addon_config"
+  ],
   "journald": true,
   "options": {
     "config_file": "fluent_bit.conf"
-   },
+  },
   "schema": {
     "config_file": "str"
   }
