@@ -11,6 +11,8 @@ on:
   pull_request:
     branches:
       - main
+  release:
+    types: [published]
 
 jobs:
   init:
@@ -89,7 +91,7 @@ jobs:
           elif [[ "${{ steps.info.outputs.architectures }}" =~ ${{ matrix.arch }} ]]; then
             echo "build_arch=true" >> $GITHUB_OUTPUT;
             echo "image=$(echo ${{ steps.info.outputs.image }} | cut -d'/' -f3)" >> $GITHUB_OUTPUT;
-            if [[ -z "${{ github.head_ref }}" ]] && [[ "${{ github.event_name }}" == "push" ]]; then
+            if [[ "${{ github.event_name }}" == "release" ]]; then
                 echo "BUILD_ARGS=" >> $GITHUB_ENV;
             fi
           else
