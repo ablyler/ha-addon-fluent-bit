@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.1.4
+
+**Full Changelog**: [`v1.1.3...v1.1.4`](https://github.com/ablyler/ha-addon-fluent-bit/compare/v1.1.3...v1.1.4)
+
 ## 1.1.3
 
 **Full Changelog**: [`v1.1.2...v1.1.3`](https://github.com/ablyler/ha-addon-fluent-bit/compare/v1.1.2...v1.1.3)
