@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.1.2
+
+**Full Changelog**: [`v1.1.1...v1.1.2`](https://github.com/ablyler/ha-addon-fluent-bit/compare/v1.1.1...v1.1.2)
+
 ## 1.1.1
 
 ### 📦 Build
