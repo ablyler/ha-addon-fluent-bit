@@ -1,0 +1,26 @@
+{
+    "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+    "dependencyDashboard": true,
+    "packageRules": [
+        {
+            "matchDatasources": ["deb"],
+            "matchPackageNames": ["fluent-bit"],
+            "registryUrls": [
+                "https://packages.fluentbit.io/debian?suite=stable&components=main&binaryArch=all"
+            ],
+            "matchUpdateTypes": ["minor", "patch"],
+            "automerge": true
+        }
+    ],
+    "customManagers": [
+        {
+            "customType": "regex",
+            "fileMatch": ["^fluent-bit/Dockerfile$"],
+            "matchStrings": [
+                "#\\s*renovate:\\s*?(release=(?<release>.*?))?\\s*depName=(?<depName>.*?)?\\sENV .*?_VERSION=\"(?<currentValue>.*)\""
+            ],
+            "registryUrlTemplate": "https://deb.debian.org/debian?{{#if release }}release={{release}}{{else}}suite=stable{{/if}}&components=main,contrib,non-free&binaryArch=all",
+            "datasourceTemplate": "deb"
+        }
+    ]
+  }
