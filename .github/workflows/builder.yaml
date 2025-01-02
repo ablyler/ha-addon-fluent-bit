@@ -2,7 +2,9 @@ name: Builder
 
 env:
   BUILD_ARGS: "--test"
-  MONITORED_FILES: "build.yaml config.json Dockerfile rootfs"
+
+concurrency:
+  group: queue
 
 on:
   push:
