@@ -1,5 +1,13 @@
 # Changelog
 
+## 1.1.1
+
+### 📦 Build
+
+* **deps:** Update dependency fluent-bit to v3.2.4 ([#19](https://github.com/ablyler/ha-addon-fluent-bit/issues/19)) ([e8aaf18](https://github.com/ablyler/ha-addon-fluent-bit/commit/e8aaf18820aa66a01bdf375c7c5d8d30c18f7b08))
+
+**Full Changelog**: [`v1.1.0...v1.1.1`](https://github.com/ablyler/ha-addon-fluent-bit/compare/v1.1.0...v1.1.1)
+
 ## 1.1.0
 
 **Full Changelog**: [`v1.0.0...v1.1.0`](https://github.com/ablyler/ha-addon-fluent-bit/compare/v1.0.0...v1.1.0)
