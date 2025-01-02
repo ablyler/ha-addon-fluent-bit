@@ -7,9 +7,7 @@
             "matchPackageNames": ["fluent-bit"],
             "registryUrls": [
                 "https://packages.fluentbit.io/debian?suite=stable&components=main&binaryArch=all"
-            ],
-            "matchUpdateTypes": ["minor", "patch"],
-            "automerge": true
+            ]
         }
     ],
     "customManagers": [
