@@ -13,7 +13,7 @@ RUN . /etc/os-release && \
     echo "deb [signed-by=/usr/share/keyrings/fluentbit-keyring.gpg] https://packages.fluentbit.io/debian/${CODENAME} ${CODENAME} main" > /etc/apt/sources.list.d/fluentbit.list
 
 # renovate: release=bookworm depName=fluent-bit
-ENV FLUENTBIT_VERSION="3.2.10"
+ENV FLUENTBIT_VERSION="4.2.0"
 
 # log out the version of fluent-bit that will be installed
 RUN echo "Fluent Bit version: ${FLUENTBIT_VERSION}"
