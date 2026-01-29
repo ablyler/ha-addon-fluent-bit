@@ -1,4 +1,4 @@
-FROM ghcr.io/hassio-addons/debian-base:9.1.0
+FROM ghcr.io/hassio-addons/debian-base:9.2.0
 
 RUN apt-get update -y && \
     apt-get install curl gpg --no-install-recommends -y
